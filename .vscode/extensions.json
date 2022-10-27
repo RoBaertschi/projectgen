@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "bungcip.better-toml",
+        "streetsidesoftware.code-spell-checker",
+        "matklad.rust-analyzer",
+        "wayou.vscode-todo-highlight",
+        "hbenl.vscode-test-explorer",
+        "Swellaby.vscode-rust-test-adapter"
+    ]
+}
