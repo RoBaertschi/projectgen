@@ -4,7 +4,6 @@ use std::path::PathBuf;
 
 use clap::{Parser, Subcommand};
 
-/// This struct presents the possible Args.
 #[derive(Parser, Debug)]
 #[command(
     name = "projectgen",
@@ -13,8 +12,7 @@ use clap::{Parser, Subcommand};
     about,
     long_about = "A project generator that generates from a template."
 )]
-
-/// Clap representation of all possible Arguments
+/// projectgen is a project generator that generates from a template.
 pub struct Args {
     /// The subcommand to use.
     #[command(subcommand)]

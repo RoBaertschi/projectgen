@@ -29,17 +29,14 @@ pub fn run(state: State) -> Result<(), String> {
     match state.command {
         Commands::New { path, template } => {
             if path.exists() {
-                return Err(format!("Path already exists."));
+                return Err("Path already exists.".to_string());
             }
 
-            match std::fs::create_dir(&path) {
-                Err(err) => {
-                    return Err(format!(
-                        "An Error occurred while creating a Directory. Error: {}",
-                        err
-                    ))
-                }
-                _ => (),
+            if let Err(err) = std::fs::create_dir(&path) {
+                return Err(format!(
+                    "An Error occurred while creating a Directory. Error: {}",
+                    err
+                ));
             }
 
             if let Err(err) = env::set_current_dir(&path) {
