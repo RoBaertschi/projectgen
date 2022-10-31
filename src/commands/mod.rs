@@ -3,6 +3,7 @@ use std::{fs, path::PathBuf, str::FromStr};
 use rustygit::{error::GitError, types::GitUrl, Repository};
 use termcolor::{Color, ColorChoice, ColorSpec, StandardStream, WriteColor};
 
+// initalize a template in the current directory.
 pub fn init_directory(_template: String) -> Result<(), String> {
     if let Some(config_dir) = dirs::config_dir() {
         if !config_dir.exists() {
